@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full'
   },
-]
+];
 
 @NgModule({
   declarations: [
@@ -49,9 +49,10 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
+
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated responses.
-    // Remoe it when a real server is ready to receive requests.
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
