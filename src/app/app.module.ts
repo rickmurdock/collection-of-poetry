@@ -16,12 +16,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WorshipfulComponent } from './worshipful/worshipful.component';
 import { YeWhichAreSpiritualComponent } from './ye-which-are-spiritual/ye-which-are-spiritual.component';
 import { UntitledComponent } from './untitled/untitled.component';
+import { GeneralComponent } from './general/general.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'worshipful', component: WorshipfulComponent},
   { path: 'humorous', component: HumorousComponent },
   { path: 'untitled', component: UntitledComponent},
+  { path: 'general', component: GeneralComponent},
   { path: 'home', component: HomeComponent },
   { path: '',
     redirectTo: '/home',
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     WorshipfulComponent,
     YeWhichAreSpiritualComponent,
-    UntitledComponent
+    UntitledComponent,
+    GeneralComponent
   ],
   imports: [
     RouterModule.forRoot(
