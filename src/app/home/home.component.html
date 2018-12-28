@@ -21,44 +21,51 @@
     <div class="arrow pointer"></div>
   </a>
 </div>
-
 <div class="container marketing" id="categories" style="height: 100vh;">
     <h2 class="text-muted text-center pb-5" style="padding-top: 70px">Poem Categories</h2>
     <div class="row">
       <div class="w-100"></div>
       <div class="col-lg-2"></div>
-
       <div class="col-lg-4">
-        <a pageScroll class="pointer newspaper"  href="#published" style="text-decoration: none">
+        <a pageScroll class="pointer newspaper"  href="#published">
           <i class="far fa-newspaper fa-4x"></i>
-          <h2 style="color: black">Published</h2>
-          <p style="color: black">Poems that were published in the Orlando Sentinel and the Orlando Evening Star in the 1930's and early 1940's.</p>
+          <h2 class="text-body">Published</h2>
+          <p class="text-body">Poems that were published in the <i>Orlando Sentinel</i> and the <i>Orlando Evening Star</i> in the 1930's and early 1940's.</p>
         </a>
       </div>
-
       <!-- <div class="col-lg-4 newspaper pointer">
           <a pageScroll href="#published"><i class="far fa-newspaper fa-4x"></i></a>
           <h2>Published</h2>
           <p>Poems that were published in the Orlando Sentinel and the Orlando Evening Star in the 1930's and early 1940's.</p>
         </div> -->
-
-
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <a href="worshipful"><i class="fas fa-cross fa-4x"></i></a>
         <h2>Worshipful</h2>
         <p>Poems related to our Lord and Savior Jesus Christ and the Word of God. Poems of worship and Praise.</p>
+      </div> -->
+
+      <div class="col-lg-4">
+        <a href="worshipful" class="cross pointer">
+          <i class="fas fa-cross fa-4x"></i>
+          <h2 class="text-body">Worshipful</h2>
+          <p class="text-body">Poems related to our Lord and Savior Jesus Christ and the Word of God. Poems of worship and Praise.</p>
+        </a>
       </div>
       <div class="w-100 pb-5"></div>
       <div class="col-lg-2"></div>
       <div class="col-lg-4">
-        <a href="worshipful"><i class="fas fa-globe-americas fa-4x"></i></a>
-        <h2>General</h2>
-        <p>Poems about life, love and family. Poems about home and politics. Poems about anything.</p>
+        <a href="general" class="globe-americas pointer">
+          <i class="fas fa-globe-americas fa-4x"></i>
+          <h2 class="text-body">General</h2>
+          <p class="text-body">Poems about life, love and family. Poems about home and politics. Poems about anything.</p>
+        </a>
       </div>
       <div class="col-lg-4">
-        <a href="untitled"><i class="far fa-question-circle fa-4x"></i></a>
-        <h2>Untitled</h2>
-        <p>Poems that were never given titles. Many are short. Maybe, works in progress that were never finished.</p>
+        <a href="untitled" class="question-circle pointer">
+          <i class="far fa-question-circle fa-4x"></i>
+          <h2 class="text-body">Untitled</h2>
+          <p class="text-body">Poems that were never given titles. Many are short. Maybe, works in progress that were never finished.</p>
+        </a>
       </div>
     </div>
 </div>
@@ -104,19 +111,9 @@
   <br>
   <div class="row featurette">
     <div class="col-md-7">
-      <h3 class="text-center">The High Cost of Living</h3>
-      <p class="lead">We blamed it on the Army and on the Army worm,<br>
-        We blamed it on the hoof and mouth or on some other germ,<br>
-        We blamed it on the butcher, we blamed it on the baker,<br>
-        We blamed it on the President and on the undertaker,<br>
-        We blamed it on the tariff, the mother-in-law and cook,<br>
-        We blamed it on the sheriff and on the scheming crook,<br>
-        We blamed it, too, on Wall Street and on the corporations,<br>
-        We blamed it on our Navy's fleet and on the other nations,<br>
-        We blamed it, too, on Christmas giving, but sometime before we die,<br>
-        We will find the cost of living was due to living high.
-      </p>
-      <h5 class="text-muted text-right">A.H.S</h5>
+      <h3 class="text-center">{{poem1.title}}</h3>
+      <p class="lead" [innerHTML]="poem1.text"></p>
+      <h5 class="text-muted text-right">{{poem1.author}}</h5>
     </div>
     <div class="col-md-5" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1800">
       <img class="featurette-image img-fluid mx-auto" src="../../assets/wallStreet.jpg" alt="Generic placeholder image">
@@ -125,174 +122,68 @@
   <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
-      <h3 class="featurette-heading text-center">One True Friend </h3>
-      <h4 class="text-center text-muted">A. H. Schilke</h4>
-      <div style="margin-left: 0; margin-right: 0">
-        <pre class="lead">
-    From the depths of my soul this cry goes out,
-      A cry that some hearts might rend,
-    A cry this is mingled with anguish and doubt,
-      `Tis the cry for one true friend.
-
-    There was never a soul so steeped in sin,
-      But came out all right in the end.
-    If they had but a spark of love within,
-      And only one true friend.
-        </pre>
-        </div>
+      <h3 class="featurette-heading text-center">{{poem2.title}}</h3>
+      <h4 class="text-center text-muted">{{poem2.author}}</h4>
+      <div style="margin-left: 0; margin-right: 0" class="titled">
+        <p class="lead" [innerHTML]="poem2.text"></p>
+      </div>
       </div>
     <div class="col-md-5 order-md-1 my-auto" data-aos="flip-left" data-aos-offset="100" data-aos-duration="1800">
       <img class="featurette-image img-fluid mx-auto" src="../../assets/oneTrueFriend.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
     </div>
   </div>
   <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7" style="border: 1px solid black">
-            <h2 class="featurette-heading text-center">It's Not What<br>You Have</h2>
-            <div>
-            <pre class="lead text">
-
-  It's now what you have that makes you great,
-   That makes you rich or poor.
-  It's not what you have that will open the gate,
-    To the city of the pure.
-
-  It's not what you have that will make you strong,
-    To fight life's battles here.
-  It's not what you have will right the wrong,
-    Or dry the flowering tear.
-
-  It's not what you have, but what you are,
-    Will make your calling sure.
-  Will pass you at the judgement bar,
-    To the City of the Pure.
-                                          -A.H.S
-            </pre>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="../../assets/itsNotWhatYouHave.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-8 order-md-2">
-              <h3 class="featurette-heading text-center">The Still Small Voice of God</h3>
-              <h4 class="text-center text-muted">A. H. Schilke</h4>
-              <div style="margin-left: 0; margin-right: 0">
-  
-              <pre class="lead">
-    Hath the spirit that speaketh in tongues of His choice
-    Not spoke to you in the still small voice?
-      Did He wisper not of a needy soul
-      Struggling, bleeding, to reach the goal?
-    As you prayed your prayer so long and loud
-    Did you hear the voice of teh thundercloud?
-      Or the voice of the Spirit speak low to thee
-      Saying "Help this soul, he is dear to Me"?
-    Were you zealous for God and hid in a cave
-    While the Spirit was pleading this soul to save?
-      Were you seaking God on the mountain spire
-      In the trembling quake of the roaring fire?
-    As you stood transfigured upon the mount
-    Did you build three temples of no account?
-      It is well to bask in the heaven's white glow
-      But don't miss the cry in the valley below,
-    For the realationship of human need
-    Is greater than ties to blood or creed.
-      For God is not seeking for leaders to-day
-      But for followers to follow the Calvary way.
-    Not for judges to sit and stern justice to mete
-    But for witnesses true at His mercy seat;
-      Not for vessels of silver or vessels of gold
-      But vessels of clay this treasure to hold
-    It was not the voice of an angel or bird
-    But the still small Voice that Elijah heard.
-      And the Voice that speaks to you and me 
-      Is speaking to sould across the sea
-    Not the voice of Abel that spoke from the sod
-    But the still small Voice, the voice of God.
-</pre>
-              </div>
-            </div>
-            <div class="col-md-4 order-md-1 my-auto" data-aos="zoom-in-up" data-aos-duration="1800">
-              <img class="featurette-image img-fluid mx-auto" src="../../assets/clouds.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
-          </div>
-  
-          <hr class="featurette-divider">
-  
-          <div class="row featurette">
-            <div class="col-md-7" style="border-top: 2px dotted black; border-bottom: 2px dotted black">
-              <i>
-              <h3 class="featurette-heading text-center">He Is No Friend of Mine</h3>
-              <h4 class="text-center text-muted">A. H. Schilke</h4>
-              </i>
-              <div>
-              <pre class="lead text">
-        He who lets me blindly go,
-        Lets me thorns and thistles sow,
-        Lets me drink my cup of woe -
-            He is no friend of mine.
-
-        He who sees my secret fault,
-        And lets me go nor calls of halt,
-        But lets me go in wild revolt -
-            He is no friend of mine.
-
-        He who pats me on the back,
-        While I tead the downward track,
-        And then he says, Alas, alack!
-            He is no friend of mine.
-        
-        He who whispers pretty things,
-        And says tha all I need is wings,
-        Yet never speaks the truth which sings -
-            He is no friend of mine.
-              </pre>
-              </div>
-            </div>
-            <div class="col-md-5 my-auto" data-aos="zoom-out-left" data-aos-offset="150" data-aos-duration="1800">
-              <img class="featurette-image img-fluid mx-auto" src="../../assets/noFriend.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
-          </div>
-  
-          <hr class="featurette-divider">
-
-
-                  <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h3 class="featurette-heading text-center">I Shall Not Live in<br> Vain </h3>
-            <h4 class="text-center text-muted">A. H. Schilke</h4>
-            <div style="margin-left: 0; margin-right: 0">
-
-            
-            <pre class="lead">
-          If I can make some burden lighter,
-          Or some lone pathway brighter,
-          Or some hungry soul can feed,
-          Not by proxy nor by creed,
-          But can meet the it's utmost need
-          By a thought, a word, or deed,
-            I shall not live in vain.
-
-          For the Maser said of old
-          That a cup of water cold
-          Given in My Name alone,
-          Though for sin cannot atone;
-          Yet the deed I'll surely own
-          When I sit upon my thrown
-            Through eternity to reign.
-            </pre>
-            </div>
-          </div>
-          <div class="col-md-5 order-md-1 my-auto" data-aos="fade-up" data-aos-offset="150" data-aos-duration="1800">
-            <img class="featurette-image img-fluid mx-auto" src="../../assets/iShallNotLiveInVain.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-        <!-- /END THE FEATURETTES -->
-
-</div><!-- /.container -->
+  <div class="row featurette">
+    <div class="col-md-7" style="border: 1px solid black">
+      <h2 class="featurette-heading text-center" style="padding: 35px 0">{{poem3.title}}</h2>
+      <div class="titled">
+        <p class="lead" [innerHTML]="poem3.text"></p>
+      </div>
+      <p class="lead float-right" [innerHTML]="poem3.author"></p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src="../../assets/itsNotWhatYouHave.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-8 order-md-2">
+      <h3 class="featurette-heading text-center">{{poem4.title}}</h3>
+      <h4 class="text-center text-muted">{{poem4.author}}</h4>
+      <div style="margin-left: 0; margin-right: 0" class="titled">
+        <p class="lead" [innerHTML]="poem4.text"></p>
+      </div>
+    </div>
+    <div class="col-md-4 order-md-1 my-auto" data-aos="zoom-in-up" data-aos-duration="1800">
+      <img class="featurette-image img-fluid mx-auto" src="../../assets/clouds.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7" style="border-top: 2px dotted black; border-bottom: 2px dotted black">
+      <i>
+      <h3 class="featurette-heading text-center">He Is No Friend of Mine</h3>
+      <h4 class="text-center text-muted">{{poem5.author}}</h4>
+      </i>
+      <div class="titled">
+        <p class="lead" [innerHTML]="poem5.text"></p>
+      </div>
+    </div>
+    <div class="col-md-5 my-auto" data-aos="zoom-out-left" data-aos-offset="150" data-aos-duration="1800">
+      <img class="featurette-image img-fluid mx-auto" src="../../assets/noFriend.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h3 class="featurette-heading text-center">{{poem6.title}}</h3>
+      <h4 class="text-center text-muted">{{poem6.author}}</h4>
+      <div style="margin-left: 0; margin-right: 0" class="titled">
+        <p class="lead" [innerHTML]="poem6.text"></p>
+      </div>
+    </div>
+    <div class="col-md-5 order-md-1 my-auto" data-aos="fade-up" data-aos-offset="150" data-aos-duration="1800">
+      <img class="featurette-image img-fluid mx-auto" src="../../assets/iShallNotLiveInVain.jpg" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
