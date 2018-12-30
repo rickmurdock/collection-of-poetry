@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { PoemService } from '../shared/poem.service';
+import { TitledPoem } from '../shared/titled-poem.model';
 
 AOS.init();
 
@@ -13,12 +14,12 @@ AOS.init();
 })
 export class HomeComponent implements OnInit {
 
-  poem1: object;
-  poem2: object;
-  poem3: object;
-  poem4: object;
-  poem5: object;
-  poem6: object;
+  poem1: TitledPoem;
+  poem2: TitledPoem;
+  poem3: TitledPoem;
+  poem4: TitledPoem;
+  poem5: TitledPoem;
+  poem6: TitledPoem;
 
   constructor(private poemService: PoemService) { }
 
@@ -33,41 +34,18 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getPoem1('The High Cost of Living');
-    this.getPoem2('One True Friend');
-    this.getPoem3('It\'s Not What You Have');
-    this.getPoem4('The Still Small Voice of God');
-    this.getPoem5('He Is No Friend of Mine');
-    this.getPoem6('I Shall Not Live in Vain');
+    this.poem1 = this.getPoem('The High Cost of Living');
+    this.poem2 = this.getPoem('One True Friend');
+    this.poem3 = this.getPoem('It\'s Not What You Have');
+    this.poem4 = this.getPoem('The Still Small Voice of God');
+    this.poem5 = this.getPoem('He Is No Friend of Mine');
+    this.poem6 = this.getPoem('I Shall Not Live in Vain');
   }
 
-  getPoem1(title: string): void {
+  getPoem(title: string): TitledPoem {
+    let x: any;
     this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem1 = poem);
-  }
-
-  getPoem2(title: string): void {
-    this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem2 = poem);
-  }
-
-  getPoem3(title: string): void {
-    this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem3 = poem);
-  }
-
-  getPoem4(title: string): void {
-    this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem4 = poem);
-  }
-
-  getPoem5(title: string): void {
-    this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem5 = poem);
-  }
-
-  getPoem6(title: string): void {
-    this.poemService.getPublishedPoem(title)
-      .subscribe(poem => this.poem6 = poem);
+      .subscribe(poem => x = poem);
+      return(x);
   }
 }
